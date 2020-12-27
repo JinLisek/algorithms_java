@@ -13,49 +13,49 @@ import java.util.List;
 
 public class BubbleSortTest {
     @Test public void givenEmptyCollectionThenShouldReturnEmptyCollection() {
-    	BubbleSort bubble = new BubbleSort();
+    	BubbleSort<Integer> bubble = new BubbleSort<>();
     	List<Integer> inputToSort = new ArrayList<Integer>();
     	List<Integer> output = bubble.run(inputToSort);
     	assertThat(output, is(empty()));
     }
     
     @Test public void givenCollectionWithSingleElementThenShouldReturnCollectionSingleElement() {
-    	BubbleSort bubble = new BubbleSort();
+    	BubbleSort<Integer> bubble = new BubbleSort<>();
     	List<Integer> inputToSort = Arrays.asList(8);
     	List<Integer> output = bubble.run(inputToSort);
     	assertThat(output, hasSize(1));
     }
     
     @Test public void givenCollectionWithSingleElementThenShouldReturnCollectionWithThatElement() {
-    	BubbleSort bubble = new BubbleSort();
+    	BubbleSort<Integer> bubble = new BubbleSort<>();
     	List<Integer> inputToSort = Arrays.asList(8);
     	List<Integer> output = bubble.run(inputToSort);
     	assertThat(output, contains(8));
     }
     
     @Test public void givenCollectionWithTwoSortedElementsThenShouldReturnTwoElements() {
-    	BubbleSort bubble = new BubbleSort();
+    	BubbleSort<Integer> bubble = new BubbleSort<>();
     	List<Integer> inputToSort = Arrays.asList(8, 12);
     	List<Integer> output = bubble.run(inputToSort);
     	assertThat(output, hasSize(2));
     }
     
     @Test public void givenCollectionWithTwoSortedElementsThenShouldReturnThoseElementsInOrder() {
-    	BubbleSort bubble = new BubbleSort();
+    	BubbleSort<Integer> bubble = new BubbleSort<>();
     	List<Integer> inputToSort = Arrays.asList(8, 12);
     	List<Integer> output = bubble.run(inputToSort);
     	assertThat(output, contains(8, 12));
     }
     
     @Test public void givenCollectionWithTwoUnsortedElementsThenShouldReturnTwoElements() {
-    	BubbleSort bubble = new BubbleSort();
+    	BubbleSort<Integer> bubble = new BubbleSort<>();
     	List<Integer> inputToSort = Arrays.asList(12, 8);
     	List<Integer> output = bubble.run(inputToSort);
     	assertThat(output, hasSize(2));
     }
     
     @Test public void givenCollectionWithTwoUnsortedElementsThenShouldReturnThoseElementsInOrder() {
-    	BubbleSort bubble = new BubbleSort();
+    	BubbleSort<Integer> bubble = new BubbleSort<>();
     	List<Integer> inputToSort = Arrays.asList(12, 8);
     	List<Integer> output = bubble.run(inputToSort);
     	assertThat(output, contains(8, 12));
