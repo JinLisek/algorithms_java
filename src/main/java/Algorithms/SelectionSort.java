@@ -3,6 +3,7 @@ package Algorithms;
 import java.util.List;
 
 import Helpers.CollectionElementComparator;
+import Helpers.CollectionElementSwapper;
 
 public class SelectionSort<Element extends Comparable<Element>> {
 
@@ -11,17 +12,12 @@ public class SelectionSort<Element extends Comparable<Element>> {
 			int minIndex = index;
 			for (int nextIndex = index + 1; nextIndex < collectionToSort.size(); ++nextIndex) {
 
-				if (CollectionElementComparator.isFirstLessThanSecond(collectionToSort, nextIndex, minIndex))
+				if (CollectionElementComparator.isFirstLessThanSecond(collectionToSort, nextIndex, minIndex)) {
 					minIndex = nextIndex;
+				}
 			}
-			swapElements(collectionToSort, index, minIndex);
+			CollectionElementSwapper.swap(collectionToSort, index, minIndex);
 		}
 		return collectionToSort;
-	}
-
-	private void swapElements(List<Element> collection, int firstIdx, int secondIdx) {
-		Element tmp = collection.get(firstIdx);
-		collection.set(firstIdx, collection.get(secondIdx));
-		collection.set(secondIdx, tmp);
 	}
 }
